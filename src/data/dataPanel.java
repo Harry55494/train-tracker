@@ -10,6 +10,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.awt.*;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.TreeMap;
@@ -117,6 +118,17 @@ public class dataPanel extends JPanel {
             add(panel);
 
         }
+
+        JPanel timePanel = new JPanel();
+        timePanel.setLayout(new BorderLayout());
+        timePanel.setPreferredSize(new Dimension(450, 40));
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+        JLabel timeLabel = new JLabel("Last updated: " + formatter.format(System.currentTimeMillis()), SwingConstants.CENTER);
+        timeLabel.setForeground(Color.gray);
+        timeLabel.setFont(new Font("Arial", Font.BOLD, 15));
+        timePanel.add(timeLabel);
+        add(timePanel);
+
 
 
     }
